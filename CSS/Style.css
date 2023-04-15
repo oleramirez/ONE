@@ -1,0 +1,207 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*  Declarar Color Para usar mas eficiente y realizar cambios mas facilmente  **/
+:root {
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --verde: #008f39;
+    --azul:  #0000ffa4;
+    --gris: #757575;
+    --grisClaro: #DFE9F3;
+    --Maufont: #c2c2c2;
+}
+html{
+    background: linear-gradient(90deg, #757575 0%,#212121 100%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    filter: brightness(150%);
+    font-family: 'Ubuntu','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+.header{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 48px;
+    padding-bottom: 30px;
+    color: var(--blanco);
+    margin: 14px;
+}
+
+.alura{
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.principal{
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    justify-content: center;
+    padding-left: 60px;
+}
+
+.texto {
+    flex-basis: 60%;
+}
+
+
+.texto-codificado {
+    flex-basis: 40%;
+  }
+
+.textarea-original{
+    background: fixed;
+    color: var(--blanco);
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    resize: none;
+    width: 67%; /* Ancho relativo al article */
+    height: 420px;
+}
+
+.textarea-original:focus{
+    outline: none;
+}
+
+.textarea-original::placeholder {
+    color: var(--blanco)};
+    font-size: 20px;
+}
+
+.informacion{
+    color: --;
+    font-size: 26px;
+    font-weight: normal;
+    background: fixed;
+    border-radius: 8px;
+    text-align: center;
+    flex-basis: 40%;
+    width: 100%;
+    height: 420px;
+}
+
+
+.textarea-modificada    {
+    background: fixed;
+    color: var(--blanco);
+    font-size: 20px;
+    border-radius: 8px;
+    resize: none;
+    width: 100%;
+    height: 420px; 
+}
+
+.textarea-modificada:focus{
+    outline: none;
+}
+
+label{
+    color: azure;
+}
+
+.boton{
+    text-align: center;
+    width: 20%;
+    background-color: var(--azul);
+    color: azure;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    word-break: break-all;
+}
+
+.copiar {
+  width: 80%;
+  margin: 5px auto;
+  display: block;
+}
+
+.boton:hover{
+    background-color: var(--gris);
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(17, 17, 17);
+    color: rgb(238, 243, 243);
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    padding: 6px;
+}
+
+.notificacion {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  background-color: var(--verde);
+  color:var(--Maufont);
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.notificacion.show {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .texto {
+      flex-basis: 100%;
+    }
+  
+    .texto-codificado {
+      flex-basis: 100%;
+    }
+  
+    .informacion {
+      flex-basis: 100%;
+    }
+
+    /* Ajuste del tamaño de fuente para los botones */
+    .texto .boton {
+      font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .texto {
+      flex-basis: 100%;
+    }
+  
+    .texto-codificado {
+      flex-basis: 100%;
+    }
+  
+    .informacion {
+      flex-basis: 100%;
+    }
+
+    /* Ajuste del tamaño de fuente para los botones */
+    .texto .boton {
+      font-size: 12px;
+    }
+}
